@@ -10,7 +10,7 @@ struct Task
 {
   int id;
   string description;
-  string amount;
+  int amount;
   string createdAt;
   string jsonFilePath;
 };
@@ -18,15 +18,17 @@ struct Task
 class ExpenseTracker
 {
 public:
-  ExpenseTracker(const std::string& filePath = "tasks.json" );
+  ExpenseTracker(const string& filePath = "tasks.json" );
   ~ExpenseTracker();
+  void addTask(const string& description, const int amount);
+
 
 private:
   vector<Task> tasks;
   int nextId;
   string getCurrentTimestamp() const;
-  void loadTasks(const std::string& filePath);
-  void saveTasks(const std::string& filePath);
+  void loadTasks(const string& filePath);
+  void saveTasks(const string& filePath);
 
 };
 

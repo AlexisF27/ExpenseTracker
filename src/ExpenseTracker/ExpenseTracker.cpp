@@ -7,7 +7,7 @@
 
 using namespace std;
 
-ExpenseTracker::ExpenseTracker(const string& filename) {
+ExpenseTracker::ExpenseTracker(const string& filename) : nextId(1) {
   loadTasks(filename);
 }
 
@@ -15,16 +15,16 @@ ExpenseTracker::~ExpenseTracker() {
   saveTasks("tasks.json");
 }
 
-std::string ExpenseTracker::getCurrentTimestamp() const {
-    std::time_t now = std::time(nullptr);
+string ExpenseTracker::getCurrentTimestamp() const {
+    time_t now = time(nullptr);
     char buffer[20];
-    std::strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", std::localtime(&now));
-    return std::string(buffer);
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", localtime(&now));
+    return string(buffer);
 }
 
 
-void ExpenseTracker::loadTasks(const std::string& filePath) {
-    std::ifstream file(filePath);
+void ExpenseTracker::loadTasks(const string& filePath) {
+    ifstream file(filePath);
     if (file.is_open()) {
         nlohmann::json jsonData;
         file >> jsonData;
@@ -43,13 +43,13 @@ void ExpenseTracker::loadTasks(const std::string& filePath) {
             }
         }
     } else {
-        std::ofstream newFile(filePath);
+        ofstream newFile(filePath);
         newFile << "[]"; 
         newFile.close();
     }
 }
 
-void ExpenseTracker::saveTasks(const std::string& filePath) {
+void ExpenseTracker::saveTasks(const string& filePath) {
     nlohmann::json jsonData;
 
     for (const auto& task : tasks) {
@@ -61,7 +61,17 @@ void ExpenseTracker::saveTasks(const std::string& filePath) {
         });
     }
 
-    std::ofstream file(filePath);
+    ofstream file(filePath);
     file << jsonData.dump(4);  
     file.close();
+}
+
+void ExpenseTracker::addTask(const string& description, int amount) {
+    Task task;
+    task.id = nextId++;
+    task.description = description;
+    task.amount = amount;
+    task.createdAt = getCurrentTimestamp();
+    tasks.push_back(task);
+    cout << "Task added successfully." << endl;
 }
