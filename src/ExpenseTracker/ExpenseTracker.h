@@ -18,7 +18,7 @@ struct Task
 class ExpenseTracker
 {
 public:
-  ExpenseTracker();
+  ExpenseTracker(const std::string& filePath = "tasks.json" );
   ~ExpenseTracker();
 
 private:
