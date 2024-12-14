@@ -16,3 +16,12 @@ ExpenseTracker is a command-line application that helps you manage your expenses
 - CMake (3.10 or higher): For building the project.
 - libcurl: For potential future integration with APIs.
 - nlohmann/json: For handling JSON data.
+
+## Installation
+
+1. ## Clone the Repository
+
+```bash
+git clone https://github.com/your-username/ExpenseTracker.git
+cd ExpenseTracker
+```
