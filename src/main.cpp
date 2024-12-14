@@ -14,13 +14,13 @@ int main(int argc, char* argv[]) {
 
   string command = argv[1];
 
-  if (argc == 3) {
-    string optionCommand = argv[2];
+  if (argc == 4) {
+    string optionCommand = argv[3];
     if (command == "delete")
     {
       expenseTracker.deleteTask(atoi(optionCommand.c_str()));
     }else if (command == "summary"){
-      expenseTracker.summary();
+      expenseTracker.summary(atoi(optionCommand.c_str()));
     }else{
       cerr << "Error: No command provided. Available commands with 3 arguments are: delete, summary." << std::endl;
     }
@@ -40,6 +40,7 @@ int main(int argc, char* argv[]) {
     {
       expenseTracker.list();
     }else if (command == "summary") {
+      expenseTracker.summary();
 
     } else {
       cerr << "Error: No command provided. Available commands are: list, summary." << std::endl;
