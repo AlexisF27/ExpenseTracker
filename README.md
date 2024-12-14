@@ -19,9 +19,8 @@ ExpenseTracker is a command-line application that helps you manage your expenses
 
 ## Installation
 
-1. ## Clone the Repository
-
-```bash
-git clone https://github.com/your-username/ExpenseTracker.git
-cd ExpenseTracker
-```
+1.- Clone the Repository
+  ```bash
+  git clone https://github.com/your-username/ExpenseTracker.git
+  cd ExpenseTracker
+  ```
