@@ -17,6 +17,11 @@ ExpenseTracker is a command-line application that helps you manage your expenses
 - libcurl: For potential future integration with APIs.
 - nlohmann/json: For handling JSON data.
 
+## Project URL
+  ```bash
+  https://roadmap.sh/projects/expense-tracker
+  ```
+
 ## Installation
 
 1. Clone the Repository
