@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "ExpenseTracker/ExpenseTracker.h"
+#include "../include/ExpenseTracker/ExpenseTracker.h"
 using namespace std;
 
 

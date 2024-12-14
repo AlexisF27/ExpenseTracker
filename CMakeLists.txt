@@ -10,7 +10,7 @@ include_directories(include)
 # Add all source files
 set(SOURCES
     src/main.cpp
-    src/ExpenseTracker/ExpenseTracker.cpp
+    src/ExpenseTracker.cpp
 )
 
 include_directories(include)
