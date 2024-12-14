@@ -35,3 +35,38 @@ ExpenseTracker is a command-line application that helps you manage your expenses
   ```bash
   ./ExpenseTracker
   ```
+
+# Usage
+## Comands
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>add</code></td>
+      <td>Adds a new expense with a description and amount.</td>
+      <td><code>./ExpenseTracker add --description "Lunch" --amount 10</code></td>
+    </tr>
+    <tr>
+      <td><code>list</code></td>
+      <td>Lists all expenses in a tabular format.</td>
+      <td><code>./ExpenseTracker list</code></td>
+    </tr>
+    <tr>
+      <td><code>summary</code></td>
+      <td>Displays a summary of all expenses.</td>
+      <td><code>./ExpenseTracker summary</code></td>
+    </tr>
+    <tr>
+      <td><code>delete &lt;ID&gt;</code></td>
+      <td>Deletes an expense by its ID.</td>
+      <td><code>./ExpenseTracker delete 1</code></td>
+    </tr>
+  </tbody>
+</table>
+
