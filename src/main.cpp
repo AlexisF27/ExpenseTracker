@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     string optionCommand = argv[2];
     if (command == "delete")
     {
-
+      expenseTracker.deleteTask(atoi(optionCommand.c_str()));
     }else if (command == "summary"){
 
     }else{
@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
   }else {
     if (command == "list")
     {
-      /* code */
+      expenseTracker.list();
     }else if (command == "summary") {
 
     } else {

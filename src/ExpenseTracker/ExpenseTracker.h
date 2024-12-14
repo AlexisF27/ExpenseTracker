@@ -21,6 +21,9 @@ public:
   ExpenseTracker(const string& filePath = "tasks.json" );
   ~ExpenseTracker();
   void addTask(const string& description, const int amount);
+  void list();
+  void summary();
+  void deleteTask(int taskId);
 
 
 private:

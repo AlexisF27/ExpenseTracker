@@ -75,3 +75,41 @@ void ExpenseTracker::addTask(const string& description, int amount) {
     tasks.push_back(task);
     cout << "Task added successfully." << endl;
 }
+void ExpenseTracker::list() {
+    // Print the header row
+    cout << setw(5) << "#"
+         << setw(12) << "Date"
+         << setw(15) << "Description"
+         << setw(8) << "Amount" 
+         << endl;
+
+    // Print a horizontal separator
+    cout << string(40, '-') << endl;
+
+    // Print each task in a formatted row
+    for (const auto& task : tasks) {
+        cout << setw(5) << task.id
+             << setw(12) << task.createdAt.substr(0, 10) // Extract just the date (YYYY-MM-DD)
+             << setw(15) << task.description
+             << "$" << task.amount // Add a dollar sign for the amount
+             << endl;
+    }
+}
+
+void ExpenseTracker::summary() {
+    int totalAmount = 0;
+    for (const auto& task : tasks) {
+        totalAmount += task.amount;
+    }
+    cout << "Total amount: $" << totalAmount << endl;
+}
+
+void ExpenseTracker::deleteTask(int taskId) {
+    auto it = find_if(tasks.begin(), tasks.end(), [taskId](const Task& task) { return task.id == taskId; });
+    if (it != tasks.end()) {
+        tasks.erase(it);
+        cout << "Task deleted successfully." << endl;
+    } else {
+        cout << "Task not found." << endl;
+    }
+}
