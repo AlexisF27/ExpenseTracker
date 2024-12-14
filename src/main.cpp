@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
     {
       expenseTracker.deleteTask(atoi(optionCommand.c_str()));
     }else if (command == "summary"){
-
+      expenseTracker.summary();
     }else{
       cerr << "Error: No command provided. Available commands with 3 arguments are: delete, summary." << std::endl;
     }

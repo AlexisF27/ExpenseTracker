@@ -104,6 +104,16 @@ void ExpenseTracker::summary() {
     cout << "Total amount: $" << totalAmount << endl;
 }
 
+void ExpenseTracker::summary(const int month) {
+    int totalAmount = 0;
+    for (const auto& task : tasks) {
+        if (task.createdAt.substr(5, 2) == to_string(month)) {
+            totalAmount += task.amount;
+        }
+    }
+    cout << "Total amount for month " << month << ": $" << totalAmount << endl;
+}
+
 void ExpenseTracker::deleteTask(int taskId) {
     auto it = find_if(tasks.begin(), tasks.end(), [taskId](const Task& task) { return task.id == taskId; });
     if (it != tasks.end()) {
@@ -113,3 +123,4 @@ void ExpenseTracker::deleteTask(int taskId) {
         cout << "Task not found." << endl;
     }
 }
+

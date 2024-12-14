@@ -23,6 +23,7 @@ public:
   void addTask(const string& description, const int amount);
   void list();
   void summary();
+  void summary(const int month);
   void deleteTask(int taskId);
 
 
